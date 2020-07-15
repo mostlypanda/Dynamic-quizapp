@@ -4,11 +4,10 @@ const ejs=require('ejs');
 const path=require('path');
 const fs=require('fs');
 
-
-
 const app=express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended:true}));
+var content = fs.readFileSync("static/index.html", 'utf8');
 app.use("/static", express.static('static'));
 app.set('view engine', 'ejs');
 
